@@ -1,18 +1,29 @@
 import { Haiku } from './../src/haiku.js';
 
+describe('Haiku', function() {
+  it('takes in haiku line and returns the number of syllables', function() {
+    let newHaiku = new Haiku("haiku");
+    let syllableCount = 2;
+    let haikuLine = "haiku"
+    expect(newHaiku.countWordSyllables(haikuLine)).toEqual(syllableCount);
+  })
 
-describe('countVowels', function() {
-  let newHaiku = new Haiku("haiku");
-  let vowelCount = 2;
-  let haikuLine = "haiku"
-  it('takes in haiku line and returns the number of vowels', function(){
-    expect(newHaiku.countVowels()).toEqual(vowelCount);
-  })
-});
-describe('wordSplitter', function() {
-  let newHaiku = new Haiku("sunny sunshine depressing mood");
-  let splitWords = ["sunny", "sunshine", "depressing", "mood"];
+
   it('should split line into words', function() {
-    expect(newHaiku.wordSplitter()).toEqual(splitWords);
+    let newHaiku = new Haiku("sunny sunshine depressing mood");
+
+    let splitWords = ["sunny", "sunshine", "depressing", "mood"];
+    newHaiku.wordSplitter();
+    console.log(newHaiku.lineOne);
+    expect(newHaiku.lineWords).toEqual(splitWords);
   })
+
+//might need describes put back in.
+
+
+  // it('should take an array of words and count all the syllables in all words', function() {
+  //   let newHaiku = new Haiku("sun is fun for you");
+  //   let words = newHaiku.wordSplitter();
+  //   expect(newHaiku.countWordSyllables(words)).toEqual(5);
+  // })
 });
