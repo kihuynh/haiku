@@ -9,3 +9,10 @@ describe('countVowels', function() {
     expect(newHaiku.countVowels()).toEqual(vowelCount);
   })
 });
+describe('wordSplitter', function() {
+  let newHaiku = new Haiku("sunny sunshine depressing mood");
+  let splitWords = ["sunny", "sunshine", "depressing", "mood"];
+  it('should split line into words', function() {
+    expect(newHaiku.wordSplitter()).toEqual(splitWords);
+  })
+});

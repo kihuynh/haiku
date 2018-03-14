@@ -6,6 +6,10 @@ export class Haiku {
     // this.lineTwo = line2;
     // this.lineThree = line3;
   };
+    wordSplitter(){
+      let haikuLine = this.lineOne.split(' ');
+      return haikuLine;
+    };
 
     countVowels(){
       let vowelCount = 0;
