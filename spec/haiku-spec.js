@@ -20,10 +20,10 @@ describe('Haiku', function() {
 
 //might need describes put back in.
 
-
-  // it('should take an array of words and count all the syllables in all words', function() {
-  //   let newHaiku = new Haiku("sun is fun for you");
-  //   let words = newHaiku.wordSplitter();
-  //   expect(newHaiku.countWordSyllables(words)).toEqual(5);
-  // })
+  it('should take an array of words and count all the syllables in all words', function() {
+    let newHaiku = new Haiku("sun is fun for you");
+    let words = newHaiku.wordSplitter();
+    let syllableCount = newHaiku.countSyllableTotal();
+    expect(syllableCount).toEqual(5);
+  })
 });

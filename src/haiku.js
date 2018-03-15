@@ -19,34 +19,32 @@ export class Haiku {
   }
 
   countSyllableTotal(){
-    let syllableTotal;
-    this.lineWords.forEach(function(word){
-
-      syllableTotal += this.countWordSyllables(word)
-    })
+    let syllableTotal = 0;
+    console.log("words before the loop: " + this.lineWords);
+    for (let i = 0; i < this.lineWords.length; i++){
+      console.log("word in loop: " + this.lineWords[i]);
+      syllableTotal += this.countWordSyllables(this.lineWords[i])
+    }
     this.lineSyllables = syllableTotal;
     return syllableTotal;
   }
 
     countWordSyllables(word){
-      let wordToSplit = word;
       let syllableCount = 0;
-      let haikuChar = wordToSplit.split('');
+      let haikuChar = word.split("");
       console.log(haikuChar);
       for (let i = 0; i < haikuChar.length; i++){
         let doubleVowel = (i - 1);
-        //vowel
         if (haikuChar[i].match(/[aeiou]/gi)){
           console.log("vowels: " + haikuChar[i]);
-          if (haikuChar[i].match(/[aeiou]/gi) && haikuChar[doubleVowel].match(/[aeiou]/gi)){
-            i++;
-          }
-        //conssonent
-          else{
+          if (haikuChar[0].match(/[aeiou]/gi )){
             syllableCount++;
-
+          } else if (haikuChar[i].match(/[aeiou]/gi) && haikuChar[doubleVowel].match(/[aeiou]/gi)){
+            i++;
+          } else{
+            syllableCount++;
           }
-        };
+        }
       };
       console.log("syllable count: " + syllableCount);
       return syllableCount;
