@@ -26,4 +26,10 @@ describe('Haiku', function() {
     let syllableCount = newHaiku.countSyllableTotal();
     expect(syllableCount).toEqual(5);
   })
+  it('should ignore silent e ', function () {
+    let newHaiku = new Haiku ("make some pie");
+    let words = newHaiku.wordSplitter();
+    let syllableCount = newHaiku.countSyllableTotal();
+    expect(syllableCount).toEqual(3);
+  })
 });
