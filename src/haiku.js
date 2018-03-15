@@ -39,6 +39,8 @@ export class Haiku {
           console.log("vowels: " + haikuChar[i]);
           if (haikuChar[0].match(/[aeiou]/gi )){
             syllableCount++;
+          } else if (haikuChar[haikuChar.length-1].match(/[e]/) && (i === haikuChar.length-1)){
+            i++;
           } else if (haikuChar[i].match(/[aeiou]/gi) && haikuChar[doubleVowel].match(/[aeiou]/gi)){
             i++;
           } else{
