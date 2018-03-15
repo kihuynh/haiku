@@ -10,8 +10,9 @@ export class Haiku {
   wordSplitter() {
     let line = this.lineOne;
     let haikuLine = line.split(" ");
-    for (let i = 0; i < haikuLine; i++) {
-      console.log(haikuLine[i]);
+      console.log("word split: " + haikuLine);
+    for (let i = 0; i < haikuLine.length; i++) {
+      console.log("word split: " + haikuLine[i]);
       this.lineWords.push(haikuLine[i]);
     }
     return haikuLine;
@@ -36,7 +37,7 @@ export class Haiku {
         let doubleVowel = (i - 1);
         //vowel
         if (haikuChar[i].match(/[aeiou]/gi)){
-          console.log(haikuChar[i]);
+          console.log("vowels: " + haikuChar[i]);
           if (haikuChar[i].match(/[aeiou]/gi) && haikuChar[doubleVowel].match(/[aeiou]/gi)){
             i++;
           }
@@ -47,7 +48,7 @@ export class Haiku {
           }
         };
       };
-      console.log(syllableCount);
+      console.log("syllable count: " + syllableCount);
       return syllableCount;
     };
   };

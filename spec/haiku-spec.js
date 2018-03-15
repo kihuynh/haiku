@@ -14,7 +14,7 @@ describe('Haiku', function() {
 
     let splitWords = ["sunny", "sunshine", "depressing", "mood"];
     newHaiku.wordSplitter();
-    console.log(newHaiku.lineOne);
+    console.log(newHaiku.lineWords);
     expect(newHaiku.lineWords).toEqual(splitWords);
   })
 

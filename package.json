@@ -1,7 +1,7 @@
 {
   "name": "haiku",
   "version": "1.0.0",
-  "description": "",
+  "description": "haiku checker",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
