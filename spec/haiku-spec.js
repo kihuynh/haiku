@@ -38,4 +38,10 @@ describe('Haiku', function() {
     let syllableCount = newHaiku.countSyllableTotal();
     expect(syllableCount).toEqual(5);
   })
+  it('should take into account for le ending', function () {
+    let newHaiku = new Haiku ("double trouble boil and bubble");
+    let words = newHaiku.wordSplitter();
+    let syllableCount = newHaiku.countSyllableTotal();
+    expect(syllableCount).toEqual(8);
+  })
 });
