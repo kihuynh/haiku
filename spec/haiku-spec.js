@@ -32,4 +32,10 @@ describe('Haiku', function() {
     let syllableCount = newHaiku.countSyllableTotal();
     expect(syllableCount).toEqual(3);
   })
+  it('should count ending Y as syllable ', function () {
+    let newHaiku = new Haiku ("make some funny pie");
+    let words = newHaiku.wordSplitter();
+    let syllableCount = newHaiku.countSyllableTotal();
+    expect(syllableCount).toEqual(5);
+  })
 });

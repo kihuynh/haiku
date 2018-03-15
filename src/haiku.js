@@ -40,12 +40,17 @@ export class Haiku {
           if (haikuChar[0].match(/[aeiou]/gi )){
             syllableCount++;
           } else if (haikuChar[haikuChar.length-1].match(/[e]/) && (i === haikuChar.length-1)){
+            //Silent E
             i++;
           } else if (haikuChar[i].match(/[aeiou]/gi) && haikuChar[doubleVowel].match(/[aeiou]/gi)){
+            //Dipthong
             i++;
           } else{
             syllableCount++;
           }
+        } else if (haikuChar[haikuChar.length-1].match(/[y]/) && (i === haikuChar.length-1)){
+          //Ends in Y
+          syllableCount++;
         }
       };
       console.log("syllable count: " + syllableCount);
